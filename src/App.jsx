@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import NewsCard from './components/NewsCard';
 import { NewsLogo } from './assets/news-logo';
+import { FaGithub } from 'react-icons/fa';
 
 function App() {
   const [news, setNews] = useState([]);
@@ -70,24 +71,36 @@ function App() {
               <h1 className="text-3xl font-bold">NewsHub</h1>
             </div>
 
-            <form
-              onSubmit={handleSearch}
-              className="flex w-full md:w-auto"
-            >
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search news..."
-                className="px-4 py-2 rounded-l-full text-gray-800 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <button
-                type="submit"
-                className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-r-full transition-colors duration-200"
+            <div className="flex items-center gap-4 w-full md:w-auto">
+              <form
+                onSubmit={handleSearch}
+                className="flex w-full md:w-auto"
               >
-                Search
-              </button>
-            </form>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search news..."
+                  className="px-4 py-2 rounded-l-full text-gray-800 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <button
+                  type="submit"
+                  className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-r-full transition-colors duration-200"
+                >
+                  Search
+                </button>
+              </form>
+              
+              <a
+                href="https://github.com/onesmuskipchumba0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-blue-400 transition-colors duration-200"
+              >
+                <FaGithub className="text-2xl" />
+                <span className="hidden md:inline">GitHub</span>
+              </a>
+            </div>
           </div>
         </div>
       </header>
